@@ -1,0 +1,237 @@
+body {
+  font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+
+/*BG Video */
+.twp-video-background {
+    background: #000;
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    overflow: hidden;
+    box-sizing: border-box; 
+}
+
+.twp-video-foreground,
+.twp-video-background video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    box-sizing: border-box;
+    object-fit: cover; 
+}
+
+.twp-video-foreground{
+    padding-bottom: 56.25%;
+    box-sizing: border-box; 
+}
+
+.twp-video-layer {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.5;
+    box-sizing: border-box; 
+}
+/*BG Video Close*/ 
+
+/* Heading */
+header nav .logo img {
+  width: 3em;
+  margin-right: 1.3rem;
+  font-weight: bolder;
+}
+
+header nav .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff6c28;
+  text-align: center;
+  width: 100%;
+}
+/* Heading Close*/
+
+
+/* Container */
+#form-row {
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  margin: 0;
+}
+
+.mb-5, .my-5 {
+  margin: 0 !important;
+}
+
+
+
+#top-row {
+  margin: 0 auto;
+}
+
+#city-form {
+  margin: 15px 0px;
+  width: 100%;
+  font-family: "Baloo 2", cursive;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+#button-link {
+  background-color: #ff6c28;
+  margin: 0 10px 0;
+}
+
+#button-search {
+  background-color: #398efd;
+}
+
+#city-display {
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: #ff6c28;
+  margin: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+#date-display {
+  font-size: 1.2rem;
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: fit-content;
+  padding: 2rem;
+  margin-top: 2rem;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.card {
+  border: none;
+  margin: 0.4rem;
+  background-color: rgb(255, 255, 255, 0.7) !important;
+  transition: all 0.5s ease;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: "Baloo 2", cursive;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.col-4, .col-2, .col-5, .col-3 {
+  padding: 0 !important;
+}
+
+.rightcard {
+  font-size: 1rem;
+}
+
+#display-temperature {
+  font-size: 4rem;
+  color: #ff6c28;
+}
+
+#temperature-card {
+  max-width: fit-content;
+}
+
+.celsius,
+.fahrenheit {
+  font-size: 2rem;
+}
+
+.stick {
+  font-size: 25px;
+  color: #000000;
+}
+
+#icon-main {
+  width: 120px;
+  text-align: center;
+}
+
+#description {
+  font-size: 20px;
+}
+
+.smalltemperature {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#fahrenheit-link,
+#celsius-link {
+  color: #398efd;
+}
+
+.active {
+  color: #ff6c28 !important;
+  text-decoration: none;
+}
+
+.active:hover {
+  cursor: default;
+  text-decoration: none;
+  color: #ff6c28;
+}
+
+#icon {
+  width: 100px;
+}
+
+.maxtemp {
+  font-weight: bolder;
+  color: #398efd;
+}
+
+#time-stamp {
+  color: #2e2e2e;
+  font-size: 20px;
+}
+
+#forecast-row {
+  margin: 0px auto;
+}
+
+#time-stamp {
+  font-size: 18px;
+}
+
+#signature {
+  
+  font-size: 15px;
+  text-align: center;
+  margin: 20px auto 0px;
+  color: #ff6c28;
+}
+
+/* Media Queries */
+/* @media (min-width: 576px) {
+  Have to add media queries
+ } */

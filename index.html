@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Weatherium</title>
+  <!-- Bootstrap 4.6 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="src/styles.css" />
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/12894c39ba.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Background Video -->
+  <div class="twp-video-background">
+    <div class="twp-video-foreground">
+        <video autoplay muted loop id="myVideo">
+          <source src="/src/cloud-animation.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="twp-video-layer"></div>
+  </div>
+  <!-- Background Video Close-->
+
+  <!-- Container Start -->
+  <section class="container rounded border border-white shadow p-3 mb-3" id="container">
+
+    <!-- Header -->
+    <div class="">
+      <div class="card-body text-center">
+        <header>
+          <nav class="nav">
+            <div class="logo">
+              <img src="images/sun.svg">
+              <h1>WEATHERIUM</h1>
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <!-- Header end -->
+
+    <!-- City form, Search and Location -->
+    <div class="row" id="top-row"> 
+
+      <form id="city-form">
+        <div class="row" id="form-row">
+          <div class="col-7">
+            <div class="form-group entercity">
+              <input
+              type="search"
+              placeholder="Enter your city"
+              class="form-control border-light shadow p-3 mb-5 bg-white"
+              aria-describedby="enterCity"
+              id="city-input"
+              />
+            </div>
+          </div>
+          
+          <div>
+            <button type="submit" class="btn text-white shadow-lg" id="button-search">
+              <i class="fas fa-search"></i>
+            </button>       
+            <button type="submit" class="btn text-white shadow-lg" id="button-link">
+              <i class="fas fa-map-marker-alt sm-icon"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+      
+    </div>
+    <!-- City form, Search and Location Close -->
+    
+    <!-- Cloud, Degrees, and Humidity and Wind -->
+    <div class="row" id="center-row text-center">
+
+      <div class="col-4 left-card">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title font-weight-bold w-100" id="city-display">
+              ---
+            </h5>
+            <h6 class="card-subtitle mb-2 text-black" id="date-display">
+              --- -- ---
+            </h6>
+            <h6 class="card-subtitle mb-2 text-black displaytime" id="time">
+              --:--
+            </h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col-2" id="icon-card">
+          <img src="https://openweathermap.org/img/wn/01d@2x.png" class="card-img-center" alt="sunny" id="icon-main"/>
+      </div>
+      
+      <div class="col-5" id="temperature-card">
+        <div class="card center-card text-center">
+          <h3 class="card-body text-primary">
+            <div>
+              <span id="display-temperature">--</span>
+              <span class="celsius"><a href="#" id="celsius-link" class="active"> °C</a></span>
+              <span class="stick">|</span>
+              <span class="fahrenheit"><a href="#" id="fahrenheit-link"> °F</a></span>
+            </div>
+          </h3>
+        </div>
+      </div>
+      
+      <div class="col-3" id="info-card">
+        <div class="card card-left">
+          <div class="card-body text-black" id="info">
+            <span class="card-text" id="description">-----</span>
+            <span class="card-text"> <br/>Humidity: <span id="humidity">--</span>%</span>
+            <span class="card-text"><br/>Wind: <span id="wind">--</span> km/h</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- Cloud, Degrees, and Humidity and Wind  Close-->
+    
+    <!-- Forecast -->
+    <div class="row white text-center forecast-row" id="forecast">
+      
+      <div class="card">
+        <div class="card-body text-center">
+          <h6 class="card-subtitle mb-2 text-black daydate">
+            <div id="time-stamp">--:--</div>
+          </h6>
+          <img
+            src="https://openweathermap.org/img/wn/01d@2x.png"
+            class="card-img-center"
+            alt="sunny"
+            id="icon"
+          />
+          <h6 class="card-subtitle mb-2 text-primary text-center"><br/>
+            <div class="maxtemp"><strong>--°C</strong></div>
+            <div class="text-black">--°C</div>
+          </h6>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-body text-center">
+          <h6 class="card-subtitle mb-2 text-black daydate">
+            <div id="time-stamp">--:--</div>
+          </h6>
+          <img
+            src="https://openweathermap.org/img/wn/02d@2x.png"
+            class="card-img-center"
+            alt="cloudy"
+            id="icon"
+          />
+          <h6 class="card-subtitle mb-2 text-primary text-center"><br/>
+            <div class="maxtemp"><strong>--°C</strong></div>
+            <div class="text-black">--°C</div>
+          </h6>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-body text-center">
+          <h6 class="card-subtitle mb-2 text-black daydate">
+            <div id="time-stamp">--:--</div>
+          </h6>
+          <img
+            src="https://openweathermap.org/img/wn/03d@2x.png"
+            class="card-img-center"
+            alt="clouds"
+            id="icon"
+          />
+          <h6 class="card-subtitle mb-2 text-primary text-center"><br/>
+            <div class="maxtemp"><strong>--°C</strong></div>
+            <div class="text-black">--°C</div>
+          </h6>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-body text-center">
+          <h6 class="card-subtitle mb-2 text-black daydate">
+            <div id="time-stamp">--:--</div>
+          </h6>
+          <img
+            src="https://openweathermap.org/img/wn/02d@2x.png"
+            class="card-img-center"
+            alt="cloudy"
+            id="icon"
+          />
+          <h6 class="card-subtitle mb-2 text-primary text-center"><br/>
+            <div class="maxtemp"><strong>--°C</strong></div>
+            <div class="text-black">--°C</div>
+          </h6>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-body text-center">
+          <h6 class="card-subtitle mb-2 text-black daydate">
+            <div id="time-stamp">--:--</div>
+          </h6>
+          <img
+            src="https://openweathermap.org/img/wn/02n@2x.png"
+            class="card-img-center"
+            alt="cloudy"
+            id="icon"
+          />
+          <h6 class="card-subtitle mb-2 text-primary text-center"><br/>
+            <div class="maxtemp"><strong>--°C</strong></div>
+            <div class="text-black">--°C</div>
+          </h6>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-body text-center">
+          <h6 class="card-subtitle mb-2 text-black daydate">
+            <div id="time-stamp">--:--</div>
+          </h6>
+          <img
+          src="https://openweathermap.org/img/wn/01n@2x.png"
+          class="card-img-center"
+          alt="clear sky"
+          id="icon"
+          />
+          <h6 class="card-subtitle mb-2 text-primary text-center">
+            <br />
+            <div class="maxtemp"><strong>--°C</strong></div>
+            <div class="text-black">--°C</div>
+          </h6>
+        </div>
+      </div>
+    </div>
+    <!-- Forecast Close -->
+  </section>
+  <!-- Container Close -->
+  <script src="src/index.js"></script>
+</body>
+</html>
