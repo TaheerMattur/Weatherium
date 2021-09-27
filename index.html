@@ -7,13 +7,13 @@
   <title>Weatherium</title>
   <!-- Bootstrap 4.6 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <!-- Google fonts -->
+  <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet"/>
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@700&display=swap" rel="stylesheet">
+  
   <!-- Styles -->
   <link rel="stylesheet" href="src/styles.css" />
   <!-- Font Awesome -->
@@ -24,35 +24,73 @@
   <!-- Background Video -->
   <div class="twp-video-background">
     <div class="twp-video-foreground">
-        <video autoplay muted loop id="myVideo">
-          <source src="src/cloud-animation.mp4" type="video/mp4">
-        </video>
+      <video autoplay muted loop id="myVideo">
+        <source src="src/video/cloudAnimation.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="twp-video-layer"></div>
   </div>
   <!-- Background Video Close-->
-
+  
   <!-- Container Start -->
   <section class="container rounded border border-white shadow p-3 mb-3" id="container">
-
+    
     <!-- Header -->
-    <div class="">
-      <div class="card-body text-center">
-        <header>
-          <nav class="nav">
-            <div class="logo">
-              <img src="images/sun.svg">
-              <h1>WEATHERIUM</h1>
-            </div>
-          </nav>
-        </header>
+    <header>
+      <div class="icon_hold">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+          <g id="sun5" class="sunny">
+            <g>
+              <g>
+                <g>
+                  <polygon fill="#FFD62C" points="161.272,117.499 185.664,91.762 190.269,126.92 225.128,120.436 208.188,151.585 
+                  240.204,166.83 208.188,182.074 225.128,213.225 190.269,206.742 185.664,241.899 161.272,216.163 136.88,241.899 
+                  132.274,206.742 97.416,213.225 114.354,182.074 82.34,166.83 114.354,151.585 97.416,120.436 132.274,126.92 136.88,91.762 
+                  "></polygon>
+                </g>
+              </g>
+              <g>
+                <g>
+                  <circle fill="#FFF931" cx="161.698" cy="166.852" r="37.688"></circle>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g id="Cloud11" class="cloudy">
+            <g>
+              <g>
+                <g>
+                  <path fill="#398efd" d="M388.688,213.609c-2.736,0-5.41,0.256-8.012,0.722v-0.173c0.908-5.187,1.41-10.51,1.41-15.956
+                  c0-50.764-41.155-91.915-91.916-91.915c-39.628,0-73.396,25.079-86.307,60.232c-1.39-0.084-2.788-0.143-4.2-0.143
+                  c-26.257,0-49.011,14.909-60.301,36.719c-2.472-0.372-5.003-0.566-7.577-0.566c-27.984,0-50.665,22.677-50.665,50.663
+                  c0,27.98,22.681,50.666,50.665,50.666v0.256H380.68v-0.721c2.601,0.467,5.274,0.721,8.011,0.721
+                  c24.991,0,45.253-20.26,45.253-45.25C433.941,233.872,413.68,213.609,388.688,213.609z"></path>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g id="line45" class="linn1">
+            <line fill="none" stroke="#9C9CFF" stroke-width="7" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="40,17" x1="163.5" y1="345.5" x2="197.5" y2="294.5"></line>
+          </g>
+          <g id="line32" class="linn1">
+            <line fill="none" stroke="#9C9CFF" stroke-width="7" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="15,17" x1="198.5" y1="347.5" x2="232.5" y2="293.5"></line>
+          </g>
+          <g id="line23" class="linn1">
+            <line fill="none" stroke="#9C9CFF" stroke-width="7" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="23,17" x1="232.5" y1="342.5" x2="266.5" y2="291.5"></line>
+          </g>
+          <g id="line24" class="linn1">
+            <line fill="none" stroke="#9C9CFF" stroke-width="7" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="14,17" x1="268.5" y1="344.5" x2="302.5" y2="290.5"></line>
+          </g>
+          <ellipse id="shadow10" class="shadow" opacity="0.2" cx="257" cy="480" rx="154.5" ry="15.5"></ellipse>
+        </svg>
       </div>
-    </div>
+      <h1>Weatherium</h1>
+    </header>
     <!-- Header end -->
-
+    
     <!-- City form, Search and Location -->
     <div class="row" id="top-row"> 
-
+      
       <form id="city-form">
         <div class="row" id="form-row">
           <div class="col-7">
@@ -83,7 +121,7 @@
     
     <!-- Cloud, Degrees, and Humidity and Wind -->
     <div class="row" id="center-row text-center">
-
+      
       <div class="col-4 left-card">
         <div class="card">
           <div class="card-body text-center">
@@ -99,9 +137,9 @@
           </div>
         </div>
       </div>
-
+      
       <div class="card col-2" id="icon-card">
-          <img src="https://openweathermap.org/img/wn/01d@2x.png" class="card-img-center" alt="sunny" id="icon-main"/>
+        <img src="https://openweathermap.org/img/wn/01d@2x.png" class="card-img-center" alt="sunny" id="icon-main"/>
       </div>
       
       <div class="col-5" id="temperature-card">
@@ -139,10 +177,10 @@
             <div id="time-stamp">--:--</div>
           </h6>
           <img
-            src="https://openweathermap.org/img/wn/01d@2x.png"
-            class="card-img-center"
-            alt="sunny"
-            id="icon"
+          src="https://openweathermap.org/img/wn/01d@2x.png"
+          class="card-img-center"
+          alt="sunny"
+          id="icon"
           />
           <h6 class="card-subtitle mb-2 text-primary text-center"><br/>
             <div class="maxtemp"><strong>--°C</strong></div>
@@ -157,10 +195,10 @@
             <div id="time-stamp">--:--</div>
           </h6>
           <img
-            src="https://openweathermap.org/img/wn/02d@2x.png"
-            class="card-img-center"
-            alt="cloudy"
-            id="icon"
+          src="https://openweathermap.org/img/wn/02d@2x.png"
+          class="card-img-center"
+          alt="cloudy"
+          id="icon"
           />
           <h6 class="card-subtitle mb-2 text-primary text-center"><br/>
             <div class="maxtemp"><strong>--°C</strong></div>
@@ -175,10 +213,10 @@
             <div id="time-stamp">--:--</div>
           </h6>
           <img
-            src="https://openweathermap.org/img/wn/03d@2x.png"
-            class="card-img-center"
-            alt="clouds"
-            id="icon"
+          src="https://openweathermap.org/img/wn/03d@2x.png"
+          class="card-img-center"
+          alt="clouds"
+          id="icon"
           />
           <h6 class="card-subtitle mb-2 text-primary text-center"><br/>
             <div class="maxtemp"><strong>--°C</strong></div>
@@ -193,10 +231,10 @@
             <div id="time-stamp">--:--</div>
           </h6>
           <img
-            src="https://openweathermap.org/img/wn/02d@2x.png"
-            class="card-img-center"
-            alt="cloudy"
-            id="icon"
+          src="https://openweathermap.org/img/wn/02d@2x.png"
+          class="card-img-center"
+          alt="cloudy"
+          id="icon"
           />
           <h6 class="card-subtitle mb-2 text-primary text-center"><br/>
             <div class="maxtemp"><strong>--°C</strong></div>
@@ -211,10 +249,10 @@
             <div id="time-stamp">--:--</div>
           </h6>
           <img
-            src="https://openweathermap.org/img/wn/02n@2x.png"
-            class="card-img-center"
-            alt="cloudy"
-            id="icon"
+          src="https://openweathermap.org/img/wn/02n@2x.png"
+          class="card-img-center"
+          alt="cloudy"
+          id="icon"
           />
           <h6 class="card-subtitle mb-2 text-primary text-center"><br/>
             <div class="maxtemp"><strong>--°C</strong></div>

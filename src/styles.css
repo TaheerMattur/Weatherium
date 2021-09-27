@@ -1,62 +1,119 @@
 body {
-  font-family: 'Montserrat Subrayada', sans-serif;
+  font-family: 'Baloo Tamma 2', cursive;
 }
-
 
 /*BG Video */
 .twp-video-background {
-    background: #000;
-    position: absolute;
-    top: 0; 
-    right: 0; 
-    bottom: 0; 
-    left: 0;
-    overflow: hidden;
-    box-sizing: border-box; 
+  background: #000;
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  overflow: hidden;
+  box-sizing: border-box; 
 }
 
 .twp-video-foreground,
 .twp-video-background video{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    pointer-events: none;
-    box-sizing: border-box;
-    object-fit: cover; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  box-sizing: border-box;
+  object-fit: cover; 
 }
 
 .twp-video-foreground{
-    padding-bottom: 56.25%;
-    box-sizing: border-box; 
+  padding-bottom: 56.25%;
+  box-sizing: border-box; 
 }
 
 .twp-video-layer {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    opacity: 0.5;
-    box-sizing: border-box; 
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.5;
+  box-sizing: border-box; 
 }
 /*BG Video Close*/ 
 
+
 /* Heading */
-header nav .logo img {
-  width: 3em;
-  margin-right: 1.3rem;
-  font-weight: bolder;
+header {
+display: flex;
+justify-content: center;
+align-items: center;
+color: #ff6c28;
+text-align: center;
+width: 100%;
 }
 
-header nav .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ff6c28;
-  text-align: center;
-  width: 100%;
+h1 {
+  margin-bottom: 0;
+  font-size: 2.5rem;
 }
 /* Heading Close*/
+
+
+/* Logo Animation */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.icon_hold {
+  width: 12%;
+  height: auto;
+  text-align: center;
+  padding: 0.8rem;
+}
+
+.sunny {
+  animation: sunny 15s linear infinite;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.cloudy {
+  animation: cloudy 5s ease-in-out infinite;
+}
+
+.linn1 {
+  stroke-dasharray: 50;
+  animation: dash1 15s linear infinite;
+}
+
+@keyframes sunny {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cloudy {
+  50% {
+    transform: translateY(-20px);
+}
+
+}
+@keyframes dash1 {
+  100% {
+  stroke-dashoffset: 1000;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 12px;
+    line-height: 23px;
+  }
+}
+/* Logo Animation CLose*/
 
 
 /* Container */
@@ -74,14 +131,12 @@ header nav .logo {
   margin: 0 !important;
 }
 
-
-
 #top-row {
   margin: 0 auto;
 }
 
 #city-form {
-  margin: 15px 0px;
+  margin: 0.8rem 0;
   width: 100%;
   font-family: "Baloo 2", cursive;
 }
@@ -92,23 +147,11 @@ header nav .logo {
 
 #button-link {
   background-color: #ff6c28;
-  margin: 0 10px 0;
+  margin: 0 0.9rem 0;
 }
 
 #button-search {
-  background-color: #398efd;
-}
-
-#city-display {
-  font-weight: bold;
-  font-size: 2.2rem;
-  color: #ff6c28;
-  margin: 0 !important;
-  margin-bottom: 8px !important;
-}
-
-#date-display {
-  font-size: 1.2rem;
+  background-color: #202020;
 }
 
 #container {
@@ -117,8 +160,8 @@ header nav .logo {
   left: 0;
   right: 0;
   max-width: fit-content;
-  padding: 2rem;
-  margin-top: 2rem;
+  /* padding: 2rem; */
+  margin-top: 1rem;
   /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
@@ -132,10 +175,11 @@ header nav .logo {
 .card {
   border: none;
   margin: 0.4rem;
-  background-color: rgb(255, 255, 255, 0.7) !important;
+  background-color: rgba(255, 255, 255, 0.8);
   transition: all 0.5s ease;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.15);
   font-family: "Baloo 2", cursive;
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .card:hover {
@@ -150,6 +194,18 @@ header nav .logo {
 
 .rightcard {
   font-size: 1rem;
+}
+
+#city-display {
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: #ff6c28;
+  margin: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+#date-display {
+  font-size: 1.2rem;
 }
 
 #display-temperature {
@@ -167,22 +223,22 @@ header nav .logo {
 }
 
 .stick {
-  font-size: 25px;
-  color: #000000;
+  font-size: 1.5rem;
+  color: #202020;
 }
 
 #icon-main {
-  width: 120px;
+  width: 8rem;
   text-align: center;
 }
 
 #description {
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 .smalltemperature {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 2rem;
 }
 
 #fahrenheit-link,
@@ -202,7 +258,7 @@ header nav .logo {
 }
 
 #icon {
-  width: 100px;
+  width: 6rem;
 }
 
 .maxtemp {
@@ -211,24 +267,12 @@ header nav .logo {
 }
 
 #time-stamp {
-  color: #2e2e2e;
-  font-size: 20px;
+  color: #202020;
+  font-size: 1.2rem;
 }
 
 #forecast-row {
   margin: 0px auto;
-}
-
-#time-stamp {
-  font-size: 18px;
-}
-
-#signature {
-  
-  font-size: 15px;
-  text-align: center;
-  margin: 20px auto 0px;
-  color: #ff6c28;
 }
 
 /* Media Queries */
