@@ -165,11 +165,12 @@ svg:not(:root) {
 #container {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0;  
   right: 0;
   max-width: fit-content;
   /* padding: 2rem; */
   margin-top: 1rem;
+  box-shadow: gray 5px 5px 10px;
   /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
@@ -186,7 +187,8 @@ svg:not(:root) {
   justify-content: center;
   align-items: center;
   margin: 0.4rem;
-  background-color: rgba(255, 255, 255, 0.8);
+
+  background-color: rgba(255, 255, 255, 0.6);
   transition: all 0.5s ease;
   border: 2px solid rgba(0, 0, 0, 0.15);
   font-family: "Baloo 2", cursive;
