@@ -1,6 +1,5 @@
 # Weatherium
-  *Made with vanilla JS using Open Weather API*
-
+  Made with vanilla JS using Open Weather API
 ### Check it out [here]!
 <img src="https://forthebadge.com/images/badges/made-with-javascript.svg"> 
 
