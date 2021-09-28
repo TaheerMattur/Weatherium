@@ -16,4 +16,3 @@
  - Completely responsive, works on any devices
  - Glassy finish for screens >=992px
  - Additionally it has a video background of clouds >=992px
-
