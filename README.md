@@ -1,9 +1,7 @@
 # Weatherium
   Made with vanilla JS using Open Weather API
-### Check it out [here]!
+### Check it out [taheermattur.github.io/weatherium/]!
 <img src="https://forthebadge.com/images/badges/made-with-javascript.svg"> 
-
- [here]:<taheermattur.github.io/weatherium/>
 
 ## Overview 👀
 <img src="https://github.com/TaheerMattur/Weatherium/blob/main/src/images/Weatherium.png" alt= "Weatherium">
